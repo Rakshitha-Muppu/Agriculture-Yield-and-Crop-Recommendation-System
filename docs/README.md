@@ -1,17 +1,21 @@
 # Documentation
 
-This folder contains project documentation.
+This folder contains project documentation and supporting materials.
 
-Contents:
+## Contents
 
 * Project Report
 * Architecture Diagram
-* Screenshots
 * Workflow Diagrams
 * Presentation Materials
+* Dataset Documentation
+* Azure and Cloud Configuration Details
 
-Purpose:
+## Purpose
 
-* Explain project design
-* Document implementation details
+* Explain project architecture and design
+* Document data processing workflow
+* Maintain implementation details
+* Store project reports and presentations
+* Record cloud and database configurations
 * Maintain project records
