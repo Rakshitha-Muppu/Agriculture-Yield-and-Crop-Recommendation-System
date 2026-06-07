@@ -1,6 +1,8 @@
 from database.db_connection import get_connection
 
+# Get all users
 def get_all_users():
+
     conn = get_connection()
     cursor = conn.cursor()
 
@@ -13,6 +15,8 @@ def get_all_users():
 
     return users
 
+
+# Create new user
 def create_user(
     full_name,
     phone_number,
@@ -23,6 +27,7 @@ def create_user(
     land_type,
     password
 ):
+
     conn = get_connection()
     cursor = conn.cursor()
 
@@ -58,3 +63,43 @@ def create_user(
 
     cursor.close()
     conn.close()
+
+
+# Get user using email
+def get_user_by_email(email):
+
+    conn = get_connection()
+    cursor = conn.cursor(dictionary=True)
+
+    query = """SELECT * FROM users WHERE email = %s"""
+
+    cursor.execute(query, (email,))
+
+    user = cursor.fetchone()
+
+    cursor.close()
+    conn.close()
+
+    return user
+
+
+# Get user using user_id
+def get_user_by_id(user_id):
+
+    conn = get_connection()
+    cursor = conn.cursor(dictionary=True)
+
+    query = """
+    SELECT *
+    FROM users
+    WHERE user_id = %s
+    """
+
+    cursor.execute(query, (user_id,))
+
+    user = cursor.fetchone()
+
+    cursor.close()
+    conn.close()
+
+    return user

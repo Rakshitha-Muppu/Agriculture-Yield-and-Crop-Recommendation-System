@@ -1,8 +1,9 @@
 from database.db_connection import get_connection
 
-conn = get_connection()
-
-if conn.is_connected():
+try:
+    conn = get_connection()
     print("Database Connected Successfully")
+    conn.close()
 
-conn.close()
+except Exception as e:
+    print("Error:", e)
