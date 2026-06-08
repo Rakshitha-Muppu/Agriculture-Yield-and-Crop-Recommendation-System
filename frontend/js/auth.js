@@ -365,4 +365,22 @@ window.onload = () => {
 
     loadStates();
 
+    const params =
+        new URLSearchParams(
+            window.location.search
+        );
+
+    const mode =
+        params.get("mode");
+
+    if (mode === "signup") {
+
+        switchTab("signup");
+
+    } else {
+
+        switchTab("login");
+
+    }
+
 };
